@@ -21,12 +21,12 @@ begin
             field :_id, :type => String
           end
 
-          field :data, :type => BSON::Binary, :default => BSON::Binary.new(Marshal.dump({}))
+          field :data, :type => ::BSON::Binary, :default => ::BSON::Binary.new(Marshal.dump({}))
         end
 
         private
         def pack(data)
-          BSON::Binary.new(Marshal.dump(data))
+          ::BSON::Binary.new(Marshal.dump(data))
         end
       end
     end
