@@ -9,7 +9,7 @@ begin
         class Session
           include Mongoid::Document
           include Mongoid::Timestamps
-          self.collection_name = MongoSessionStore.collection_name
+          self.default_collection_name = MongoSessionStore.collection_name
 
           attr_accessible :_id, :data
 
